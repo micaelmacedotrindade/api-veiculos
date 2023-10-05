@@ -1,6 +1,7 @@
 # Cadastro de veículos
 
 Aplicação de para realização de cadastro de veículos. Sendo possível cadastrar, editar, excluir e consultar os dados registrados.
+Além disso, na pasta Algoritmos, existem desafios de algoritmos implementados.
 
 ## Principais tecnologias
 
