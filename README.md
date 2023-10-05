@@ -13,7 +13,7 @@ Maven
 Node.js
 Postgres SQL
 
-## Configurção
+## Configuração
 
 A aplicação possui uma api em backend que precisa ser executada em servidor de aplicação Tomcat.
 O Front-end deve ser executado com o Node.js.
