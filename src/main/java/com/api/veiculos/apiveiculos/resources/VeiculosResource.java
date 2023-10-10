@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.api.veiculos.apiveiculos.domain.veiculo.GrupoVeiculoPorDecadaRecord;
@@ -24,6 +25,7 @@ import com.api.veiculos.apiveiculos.exception.ResourceNotFoundException;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;
+import jakarta.ws.rs.DefaultValue;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.PATCH;
 import jakarta.ws.rs.POST;
@@ -38,6 +40,7 @@ import jakarta.ws.rs.QueryParam;
  *
  */
 @Component
+@Controller
 @Path("/api/v1")
 public class VeiculosResource {
 
