@@ -107,9 +107,10 @@ public class VeiculosResource {
 		for (Integer d : listDecadas) {
 			int quantidadeNaDecada = 0;
 			for (Veiculo v : listVeiculos) {
-				if(pertenceADecada(d, v)) {
+				if (pertenceADecada(d, v)) {
 					quantidadeNaDecada++;
-				};
+				}
+				;
 			}
 			veiculosPorDecada.add(new GrupoVeiculoPorDecadaRecord(d, quantidadeNaDecada));
 		}
@@ -117,7 +118,7 @@ public class VeiculosResource {
 	};
 
 	private boolean pertenceADecada(Integer decada, Veiculo v) {
-		if(extrairDecadaDeVeiculo(v).equals(decada)) {
+		if (extrairDecadaDeVeiculo(v).equals(decada)) {
 			return true;
 		}
 		return false;
@@ -148,10 +149,11 @@ public class VeiculosResource {
 	@GET
 	@Produces("application/json")
 	@Path("/veiculos/{id}")
-	public ResponseEntity<Veiculo> getUserById(@PathParam(value = "id") Long id) throws ResourceNotFoundException {
+	public ResponseEntity<VeiculoRecord> getVeiculoById(@PathParam(value = "id") Long id)
+			throws ResourceNotFoundException {
 		Optional<Veiculo> veiculo = veiculosRepository.findById(id);
 		if (veiculo.isPresent()) {
-			return ResponseEntity.ok().body(veiculo.get());
+			return ResponseEntity.ok().body(new VeiculoRecord(veiculo.get()));
 		} else {
 			return ResponseEntity.notFound().build();
 		}
